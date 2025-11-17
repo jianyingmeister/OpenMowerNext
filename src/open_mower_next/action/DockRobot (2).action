@@ -1,0 +1,13 @@
+# Goal
+bool start_docking
+
+---
+# Result
+bool success
+string message
+
+---
+# Feedback
+float32 distance_to_dock
+float32 angle_error
+string status

@@ -38,10 +38,15 @@ open_mower_next::sim::SimNode::SimNode(const rclcpp::NodeOptions& options) : Nod
   battery_state_msg_.power_supply_technology = sensor_msgs::msg::BatteryState::POWER_SUPPLY_TECHNOLOGY_LION;
   battery_state_msg_.present = true;
 
-  charger_timer_ =
-      this->create_timer(std::chrono::milliseconds(1000 / freq_), [this] { chargerPresentSimulationCallback(); });
+  // charger_timer_ =
+  //    this->create_timer(std::chrono::milliseconds(1000 / freq_), [this] { chargerPresentSimulationCallback(); });
 
-  battery_timer_ = this->create_timer(std::chrono::seconds(1), [this] { batteryStateSimulationCallback(); });
+  // battery_timer_ = this->create_timer(std::chrono::seconds(1), [this] { batteryStateSimulationCallback(); });
+
+  charger_timer_ =
+    this->create_wall_timer(std::chrono::milliseconds(1000 / freq_), [this] { chargerPresentSimulationCallback(); });
+  battery_timer_ = this->create_wall_timer(std::chrono::seconds(1), [this] { batteryStateSimulationCallback(); });
+
 
   // Docking station pose offset parameters
   // Defaults to an empty.sdf docking_station model

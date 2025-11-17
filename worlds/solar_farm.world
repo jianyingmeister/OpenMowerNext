@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="solar_farm">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <!-- 100m×100m 规则光伏阵列，5m 通道 -->
+    <model name="panel_row">
+      <static>true</static>
+      <pose>0 0 0.8 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>10 2.5 0.05</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/Blue</name></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 生成 7×7 阵列，间距 15m（10m面板 + 5m通道） -->
+    <script>
+      <uri>model://panel_row</uri>
+      <name>gen_panels</name>
+      <script>
+        import math
+        for x in range(-45, 60, 15):
+          for y in range(-45, 60, 15):
+            if abs(x) > 10 or abs(y) > 10:  # 中心留空地
+              print(f'<include><uri>model://panel_row</uri><name>panel_{x}_{y}</name><pose>{x} {y} 0 0 0 1.57</pose></include>')
+      </script>
+    </script>
+
+    <!-- 起始点放机器人 -->
+    <include><uri>model://openmower</uri><name>mower</name><pose>0 0 0.3 0 0 0</pose></include>
+  </world>
+</sdf>

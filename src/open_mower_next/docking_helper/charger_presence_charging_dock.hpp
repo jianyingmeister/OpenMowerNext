@@ -25,7 +25,10 @@ public:
   geometry_msgs::msg::PoseStamped getStagingPose(const geometry_msgs::msg::Pose& pose,
                                                  const std::string& frame) override;
 
-  bool getRefinedPose(geometry_msgs::msg::PoseStamped& pose, std::string id) override;
+  //bool getRefinedPose(geometry_msgs::msg::PoseStamped& pose, std::string id) override;
+  bool getRefinedPose(geometry_msgs::msg::PoseStamped& pose, std::string id);
+  bool getRefinedPose(geometry_msgs::msg::PoseStamped& pose) override;
+
   bool isDocked() override;
   bool isCharging() override;
   bool disableCharging() override;

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="solar_farm">
+    <physics name="1ms" type="ignored"/>
+    <physics name="default">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <!-- 100m x 100m 平地 -->
+    <model name="solar_panel_row">
+      <!-- 这里用规则行列，面板长10m，间距5m通道 -->
+      <static>true</static>
+      <pose>0 0 0.5 0 0 0</pose>
+      <link name="panel">
+        <visual name="visual">
+          <geometry>
+            <box><size>10 2 0.1</size></box>
+          </geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><name>Gazebo/DarkGrey</name></script></material>
+        </visual>
+        <collision name="collision">
+          <geometry><box><size>10 2 0.1</size></box></geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- 生成 8 行 × 8 列光伏阵列，通道 5m -->
+    <script>
+      <uri>model://solar_panel_row</uri>
+      <name>solar_panel</name>
+      <script>
+        for i in range(-35, 40, 15):    # 每 15m 一排（10m面板+5m通道）
+          for j in range(-35, 40, 15):
+            if not (abs(i) < 5 and abs(j) < 5):  # 中心留一块空地放充电桩和起始点
+              print(f"<include><uri>model://solar_panel_row</uri><name>panel_{i}_{j}</name><pose>{i} {j} 0 0 0 0</pose></include>")
+      </script>
+    </script>
+
+    <!-- 机器人起始位置 -->
+    <include>
+      <uri>model://openmower</uri>
+      <name>mower</name>
+      <pose>0 0 0.2 0 0 0</pose>
+    </include>
+  </world>
+</sdf>

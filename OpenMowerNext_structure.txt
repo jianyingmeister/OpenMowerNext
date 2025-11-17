@@ -1,0 +1,172 @@
+[01;34m.[0m
+├── [01;34mcmake[0m
+│   ├── docking_helper.cmake
+│   ├── map_recorder.cmake
+│   ├── map_server.cmake
+│   └── sim.cmake
+├── [01;34mconfig[0m
+│   ├── [01;34mhardware[0m
+│   │   ├── openmower.yaml
+│   │   ├── vesc.yaml
+│   │   └── yardforce500.yaml
+│   ├── behavior_tree.xml
+│   ├── controllers.yaml
+│   ├── gps.yaml
+│   ├── nav2_params.yaml
+│   ├── robot_localization.yaml
+│   ├── twist_mux.yaml
+│   └── view_bot.rviz
+├── [01;34mdocs[0m
+│   ├── [01;34marchitecture[0m
+│   │   ├── docking-helper.md
+│   │   ├── localization.md
+│   │   ├── map-recorder.md
+│   │   ├── map-server.md
+│   │   ├── omros2-firmware.md
+│   │   ├── ros-workspace.md
+│   │   └── sim-node.md
+│   ├── [01;34massets[0m
+│   │   ├── [01;35mfoxglove.png[0m
+│   │   ├── [01;35mgazebo.jpg[0m
+│   │   ├── geojson-schema.json
+│   │   ├── [01;35mlogo.png[0m
+│   │   ├── [01;35mros.png[0m
+│   │   ├── std_srvs_setbool.srv
+│   │   └── std_srvs_trigger.srv
+│   ├── [01;34mpublic[0m
+│   │   ├── [01;35mlogo.png[0m
+│   │   └── [01;35mlogo128.png[0m
+│   ├── clion-env.md
+│   ├── configuration.md
+│   ├── contributing.md
+│   ├── devcontainer.md
+│   ├── getting-started.md
+│   ├── gps.md
+│   ├── groot.md
+│   ├── index.md
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── roadmap.md
+│   ├── simulator.md
+│   └── visualisation.md
+├── [01;34msrc[0m
+│   └── [01;34mopen_mower_next[0m
+│       ├── [01;34maction[0m
+│       │   ├── DockRobot (2).action
+│       │   ├── DockRobot.action
+│       │   ├── DockRobotNearest.action
+│       │   ├── DockRobotTo - 副本.action:Zone.Identifier
+│       │   ├── DockRobotTo.action
+│       │   ├── RecordAreaBoundary.action
+│       │   └── RecordDockingStation.action
+│       ├── [01;34mdescription[0m
+│       │   ├── camera.xacro
+│       │   ├── gazebo_control.xacro
+│       │   ├── gps.xacro
+│       │   ├── imu.xacro
+│       │   ├── inertial_macros.xacro
+│       │   ├── robot.urdf.xacro
+│       │   ├── robot_core.xacro
+│       │   └── ros2_control.xacro
+│       ├── [01;34mfoxglove[0m
+│       │   └── default.json
+│       ├── [01;34mlaunch[0m
+│       │   ├── full_nav_launch.py
+│       │   ├── gps.launch.py
+│       │   ├── joystick.launch.py
+│       │   ├── localization.launch.py
+│       │   ├── micro_ros_agent.launch.py
+│       │   ├── nav2.launch.py
+│       │   ├── openmower.launch.py
+│       │   ├── rsp.launch.py
+│       │   └── sim.launch.py
+│       ├── [01;34mmaps[0m
+│       │   ├── empty_map - 副本.yaml:Zone.Identifier
+│       │   ├── empty_map.yaml
+│       │   ├── map.yaml
+│       │   └── world.yaml
+│       ├── [01;34mmsg[0m
+│       │   ├── Area.msg
+│       │   ├── DockingStation.msg
+│       │   └── Map.msg
+│       ├── [01;34mrviz[0m
+│       │   └── full_nav.rviz
+│       ├── [01;34msrc[0m
+│       │   ├── [01;34mdocking_helper[0m
+│       │   │   ├── charger_presence_charging_dock.cpp
+│       │   │   ├── charger_presence_charging_dock.hpp
+│       │   │   ├── docking_helper_node.cpp
+│       │   │   ├── docking_helper_node.hpp
+│       │   │   ├── main.cpp
+│       │   │   └── plugins.xml
+│       │   ├── [01;34mmap_recorder[0m
+│       │   │   ├── main.cpp
+│       │   │   ├── map_recorder_node.cpp
+│       │   │   ├── map_recorder_node.hpp
+│       │   │   └── utils.hpp
+│       │   ├── [01;34mmap_server[0m
+│       │   │   ├── geo_json_map.cpp
+│       │   │   ├── geo_json_map.hpp
+│       │   │   ├── map_server_node.cpp
+│       │   │   ├── map_server_node.hpp
+│       │   │   ├── node_main.cpp
+│       │   │   ├── polygon_iterator.hpp
+│       │   │   ├── polygon_utils.hpp
+│       │   │   └── some_gaussian_filter.hpp
+│       │   ├── [01;34mntrip_client[0m
+│       │   │   ├── CHANGELOG.rst
+│       │   │   ├── CMakeLists.txt
+│       │   │   ├── LICENSE
+│       │   │   ├── README.md
+│       │   │   ├── package.xml
+│       │   │   └── setup.py
+│       │   ├── [01;34msim[0m
+│       │   │   ├── node_main.cpp
+│       │   │   ├── sim_node.cpp
+│       │   │   └── sim_node.hpp
+│       │   ├── [01;34mvesc[0m
+│       │   │   ├── LICENSE
+│       │   │   └── README.md
+│       │   ├── README.md
+│       │   └── sim_node.cpp
+│       ├── [01;34msrv[0m
+│       │   ├── FindNearestDockingStation.srv
+│       │   ├── RemoveArea.srv
+│       │   ├── RemoveDockingStation.srv
+│       │   ├── SaveArea.srv
+│       │   └── SaveDockingStation.srv
+│       ├── [01;34mtest[0m
+│       │   └── test_dock_robot_action.py
+│       ├── CMakeLists - 副本.txt:Zone.Identifier
+│       ├── CMakeLists.txt
+│       ├── CMakeLists.txt.backup
+│       ├── CMakeLists.txt:Zone.Identifier
+│       ├── package - 副本.xml:Zone.Identifier
+│       ├── package.xml
+│       └── package.xml.backup
+├── [01;34mutils[0m
+│   ├── [01;32mdocker-entrypoint.sh[0m
+│   ├── [01;32menvs.sh[0m
+│   ├── [01;32minstall-custom-deps.sh[0m
+│   └── [01;32mxesc2tcp.sh[0m
+├── [01;34mworlds[0m
+│   └── empty.sdf
+├── Dockerfile
+├── LICENSE
+├── Makefile
+├── NOTES.md
+├── OpenMowerNext_structure.txt
+├── README.md
+├── custom_deps.yaml
+├── docker-compose.yaml
+├── openmowernext_humble_compat - 副本.patch:Zone.Identifier
+├── openmowernext_humble_compat.patch
+├── openmowernext_humble_compat.patch.backup
+├── openmowernext_humble_compat.patch.backup1
+├── openmowernext_humble_compat.patch.backup2
+├── openmowernext_humble_compat.patch.save
+├── openmowernext_humble_compat.patch.save.1
+├── openmowernext_humble_compat.patch:Zone.Identifier
+└── package.xml:Zone.Identifier
+
+28 directories, 142 files

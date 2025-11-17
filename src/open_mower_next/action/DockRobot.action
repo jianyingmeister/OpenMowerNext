@@ -1,0 +1,8 @@
+# Goal
+bool start_docking
+---
+# Result
+bool success
+---
+# Feedback
+float32 progress

@@ -1,0 +1,31 @@
+<gazebo>
+  <plugin name="gps_plugin" filename="libgazebo_ros_gps_sensor.so">
+    <ros>
+      <namespace>/gps</namespace>
+    </ros>
+    <update_rate>10</update_rate>
+    <topic>/gps/fix</topic>
+    <gps_noise>false</gps_noise>
+    <!-- 下面这行是关键：输出原始 NMEA 到虚拟串口 -->
+    <serial_device>/home/robot/vgps/master</serial_device>
+    <baud_rate>115200</baud_rate>
+    <!-- 下面这些参数让它输出真实 F9P 一样的句子 -->
+    <nmea_sentence>GGA,VTG,RMC</nmea_sentence>
+    <ubx_sentence>NAV-PVT,NAV-HPPOSLLH,NAV-RELPOSNED</ubx_sentence>
+    <ubx_rov>true</ubx_rov>
+    <reference_latitude>35.681236</reference_latitude>   <!-- 日本东京附近，随便填 -->
+    <reference_longitude>139.767125</reference_longitude>
+    <reference_heading>0</reference_heading>
+    <reference_altitude>50</reference_altitude>
+  </plugin>
+
+  <!-- IMU 也加上真实一点的噪声 -->
+  <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+    <ros>
+      <namespace>/imu</namespace>
+    </ros>
+    <topic>data_raw</topic>
+    <update_rate>100</update_rate>
+    <gaussian_noise>0.01</gaussian_noise>
+  </plugin>
+</gazebo>

@@ -1,0 +1,55 @@
+<Rviz3DVisualization version="1">
+  <GlobalOptions>
+    <FixedFrame>map</FixedFrame>
+    <FrameRate>30</FrameRate>
+    <BackgroundColor>#202020</BackgroundColor>
+  </GlobalOptions>
+
+  <!-- Robot Model -->
+  <Display type="RobotModel" name="Robot Model" enabled="true">
+    <RobotDescription>robot_description</RobotDescription>
+    <ShowVisual>true</ShowVisual>
+    <ShowCollision>false</ShowCollision>
+  </Display>
+
+  <!-- Map -->
+  <Display type="Map" name="Map" enabled="true">
+    <Topic>/map</Topic>
+    <ColorScheme>map</ColorScheme>
+    <DrawBehind>true</DrawBehind>
+  </Display>
+
+  <!-- LaserScan -->
+  <Display type="LaserScan" name="LaserScan" enabled="true">
+    <Topic>/scan</Topic>
+    <Size>0.1</Size>
+    <Color>#FF0000</Color>
+    <DecayTime>0</DecayTime>
+  </Display>
+
+  <!-- Robot Pose -->
+  <Display type="Pose" name="Robot Pose" enabled="true">
+    <Topic>/amcl_pose</Topic>
+    <Shape>Arrow</Shape>
+    <Color>#00FF00</Color>
+    <Size>0.3</Size>
+  </Display>
+
+  <!-- Path -->
+  <Display type="Path" name="Global Path" enabled="true">
+    <Topic>/plan</Topic>
+    <Color>#00FFFF</Color>
+    <LineWidth>0.05</LineWidth>
+  </Display>
+
+  <!-- Navigation Goal -->
+  <Display type="InteractiveMarker" name="Nav Goal" enabled="true">
+    <Topic>/goal_pose</Topic>
+  </Display>
+
+  <!-- TF -->
+  <Display type="TF" name="TF" enabled="true">
+    <ShowAxes>true</ShowAxes>
+    <ShowNames>false</ShowNames>
+  </Display>
+</Rviz3DVisualization>
