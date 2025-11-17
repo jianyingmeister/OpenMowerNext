@@ -12,4 +12,4 @@ The initial goal of this project is to get learn about robot development using R
 
 ## Documentation
 
-Documentation is available at [jkaflik.github.io/OpenMowerNext](https://jkaflik.github.io/OpenMowerNext/).
+Documentation is available at [jkaflik.github.io/OpenMowerNext](https://jkaflik.github.io/OpenMowerNext/).# OpenMowerNext
