@@ -1,3 +1,4 @@
+      
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable
 from launch.substitutions import LaunchConfiguration
@@ -16,7 +17,7 @@ def generate_launch_description():
                        'behavior_server',
                        'bt_navigator',
                        'velocity_smoother',
-                       'docking_server',
+                       #'docking_server',
                        'smoother_server',
                        ]
 
@@ -91,12 +92,12 @@ def generate_launch_description():
                 parameters=[configured_params],
                 remappings=remappings +
                            [('cmd_vel', 'cmd_vel_raw'), ('cmd_vel_smoothed', 'cmd_vel_nav')]),
-            ComposableNode(
-                package='opennav_docking',
-                plugin='opennav_docking::DockingServer',
-                name='docking_server',
-                parameters=[configured_params],
-                remappings=remappings + [('cmd_vel', 'cmd_vel_raw')]),
+            #ComposableNode(
+             #   package='opennav_docking',
+             #   plugin='opennav_docking::DockingServer',
+             #   name='docking_server',
+             #  parameters=[configured_params],
+             #   remappings=remappings + [('cmd_vel', 'cmd_vel_raw')]),
             ComposableNode(
                 package='nav2_lifecycle_manager',
                 plugin='nav2_lifecycle_manager::LifecycleManager',
@@ -116,3 +117,5 @@ def generate_launch_description():
         load_composable_nodes
     ])
     return ld
+
+    

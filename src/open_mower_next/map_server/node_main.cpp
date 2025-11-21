@@ -2,7 +2,9 @@
 
 #include <rclcpp/rclcpp.hpp>
 
-#include "map_server/map_server_node.hpp"
+#include "map_server_node.hpp"
+
+//#include "map_server/map_server_node.hpp"
 
 using open_mower_next::map_server::MapServerNode;
 

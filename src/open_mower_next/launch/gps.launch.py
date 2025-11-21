@@ -12,8 +12,8 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     nodes = [
         Node(
-            package='ublox_f9p',
-            executable='ublox_f9p',
+            package='ublox_dgnss',
+            executable='ublox_dgnss',
             output='both',
             parameters=[os.path.join(get_package_share_directory("open_mower_next"), 'config', 'gps.yaml')],
         ),

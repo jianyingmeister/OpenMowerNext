@@ -6,7 +6,10 @@
 #include <geometry_msgs/msg/pose_array.hpp>
 
 #include "open_mower_next/msg/map.hpp"
-#include "map_server/some_gaussian_filter.hpp"
+
+//#include "map_server/some_gaussian_filter.hpp"
+#include "some_gaussian_filter.hpp"
+
 #include "open_mower_next/srv/save_area.hpp"
 #include "open_mower_next/srv/remove_area.hpp"
 #include "open_mower_next/srv/save_docking_station.hpp"

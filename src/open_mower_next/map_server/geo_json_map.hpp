@@ -1,7 +1,9 @@
 #pragma once
 
 #include <nlohmann/json.hpp>
+
 #include <foxglove_msgs/msg/geo_json.hpp>
+
 #include <geographic_msgs/msg/geo_point.hpp>
 #include <GeographicLib/Geocentric.hpp>
 #include <GeographicLib/LocalCartesian.hpp>

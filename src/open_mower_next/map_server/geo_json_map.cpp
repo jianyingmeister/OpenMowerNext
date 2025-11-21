@@ -1,4 +1,6 @@
-#include "map_server/geo_json_map.hpp"
+//#include "map_server/geo_json_map.hpp"
+#include "geo_json_map.hpp"
+#include "geo_json_map.hpp"
 #include <fstream>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 

@@ -58,4 +58,3 @@ def generate_launch_description():
         slam_node,
         nav2_node
     ])
-

@@ -1,4 +1,5 @@
-#include "map_recorder/map_recorder_node.hpp"
+//#include "map_recorder/map_recorder_node.hpp"
+#include "map_recorder_node.hpp"
 #include <rclcpp/rclcpp.hpp>
 
 using open_mower_next::map_recorder::MapRecorderNode;
