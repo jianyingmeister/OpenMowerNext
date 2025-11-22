@@ -19,6 +19,10 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # 关键：允许Actions生成OIDC令牌，用于交换临时推送令牌
+      packages: write  # 允许推送镜像到GHCR
+      contents: read   # 允许读取仓库代码
     steps:
       - name: Checkout
         uses: actions/checkout@v4
